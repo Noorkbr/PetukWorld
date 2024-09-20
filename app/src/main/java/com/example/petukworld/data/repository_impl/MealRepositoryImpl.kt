@@ -1,6 +1,7 @@
 package com.example.petukworld.data.repository_impl
 
 import com.example.petukworld.data.dto.ResponseMealDTO
+import com.example.petukworld.data.dto.ResponseMealDTODetails
 import com.example.petukworld.data.remote.MealApiService
 import com.example.petukworld.domain.repository.MealRepository
 import retrofit2.Response
@@ -14,4 +15,11 @@ class MealRepositoryImpl @Inject constructor(
         return response
 
     }
+
+    override suspend fun getMealDetails(mealId: String): Response<ResponseMealDTODetails> {
+        val response = apiService.getMealDetails(mealId)
+        return response
+    }
+
+
 }
